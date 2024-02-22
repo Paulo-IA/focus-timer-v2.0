@@ -65,8 +65,13 @@ body {
     border: 0;
     color: var(--text-color);
     cursor: pointer;
-
+    
     font-size: 6.4rem;
+}
+
+#controllers button.disabled {
+    pointer-events: none;
+    opacity: .2;
 }
 
 /* cards */
