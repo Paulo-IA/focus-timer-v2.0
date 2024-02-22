@@ -10,5 +10,5 @@ export const state = {
 }
 
 export const cardState = {
-    selected: 'rain'
+    selected: null
 }

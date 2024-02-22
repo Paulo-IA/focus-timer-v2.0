@@ -1,13 +1,13 @@
 import * as el from "./elements.js"
 import * as timer from "./timer.js"
 import { state, cardState } from "./state.js"
-import { buttonPress } from "./sounds.js"
+import * as sounds from "./sounds.js"
 
 export const actions = {
     toggleRunning() {
         document.documentElement.classList.toggle('running')
         el.stopButton.classList.toggle('disabled')
-        buttonPress.play()
+        sounds.buttonPress.play()
         
         state.isRunning = !state.isRunning
         timer.countdown()
@@ -49,9 +49,20 @@ export const actions = {
     },
     changeCard(card) {
         if (card) {
+            if (!cardState.selected) {
+                cardState.selected = card
+            
+                el.cardsElements[cardState.selected].classList.add('selected')
+                sounds.ambientSounds[cardState.selected].play()
+                return
+            }
             el.cardsElements[cardState.selected].classList.remove('selected')
+            sounds.ambientSounds[cardState.selected].pause()
+
             cardState.selected = card
+            
             el.cardsElements[cardState.selected].classList.add('selected')
+            sounds.ambientSounds[cardState.selected].play()
         }
     }
 }
