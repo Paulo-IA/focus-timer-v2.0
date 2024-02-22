@@ -7,9 +7,12 @@ export function setSelectedCard(card) {
             
     el.cardsElements[cardState.selected].classList.add('selected')
     sounds.ambientSounds[cardState.selected].play()
+    sounds.ambientSounds[cardState.selected].loop = true
+
 }
 
 export function unsetSelectedCard() {
     el.cardsElements[cardState.selected].classList.remove('selected')
     sounds.ambientSounds[cardState.selected].pause()
+    sounds.ambientSounds[cardState.selected].loop = false
 }

@@ -8,8 +8,3 @@ export const ambientSounds = {
     coffeshop: new Audio('../../assets/sounds/Cafeteria.wav'),
     fireplace: new Audio('../../assets/sounds/Lareira.wav')
 }
-
-ambientSounds.forest.loop = true
-ambientSounds.rain.loop = true
-ambientSounds.coffeshop.loop = true
-ambientSounds.fireplace.loop = true

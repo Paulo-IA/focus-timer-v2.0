@@ -54,6 +54,12 @@ export const actions = {
                 utils.setSelectedCard(card)
                 return
             }
+
+            if(cardState.selected == card) {
+                utils.unsetSelectedCard()
+                return
+            }
+
             utils.unsetSelectedCard()
 
             utils.setSelectedCard(card)
