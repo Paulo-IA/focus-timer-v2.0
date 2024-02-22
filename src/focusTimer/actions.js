@@ -2,6 +2,7 @@ import * as el from "./elements.js"
 import * as timer from "./timer.js"
 import { state, cardState } from "./state.js"
 import * as sounds from "./sounds.js"
+import * as utils from "./utils.js"
 
 export const actions = {
     toggleRunning() {
@@ -50,19 +51,12 @@ export const actions = {
     changeCard(card) {
         if (card) {
             if (!cardState.selected) {
-                cardState.selected = card
-            
-                el.cardsElements[cardState.selected].classList.add('selected')
-                sounds.ambientSounds[cardState.selected].play()
+                utils.setSelectedCard(card)
                 return
             }
-            el.cardsElements[cardState.selected].classList.remove('selected')
-            sounds.ambientSounds[cardState.selected].pause()
+            utils.unsetSelectedCard()
 
-            cardState.selected = card
-            
-            el.cardsElements[cardState.selected].classList.add('selected')
-            sounds.ambientSounds[cardState.selected].play()
+            utils.setSelectedCard(card)
         }
     }
 }
