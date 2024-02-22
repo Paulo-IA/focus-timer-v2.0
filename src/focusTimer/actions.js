@@ -16,31 +16,34 @@ export const actions = {
         el.stopButton.classList.add('disabled')
 
         state.isRunning = false
-        timer.updateDisplay()
+        timer.updateDisplay(state.default.minutes, state.default.seconds)
     },
     addTimer() {
         let minutes = state.minutes
-        if ((minutes += 5) > 60) {
-            state.minutes = 60
-            state.seconds = 0
-            timer.updateDisplay(state.minutes, state.seconds)
+        let seconds = state.seconds
+
+        if ((minutes + 5) > 60) {
+            minutes = 60
+            seconds = 0
+            timer.updateDisplay(minutes, seconds)
             return
         }
         
-        state.minutes += 5
-        timer.updateDisplay(state.minutes, state.seconds)
-
+        minutes += 5
+        timer.updateDisplay(minutes, seconds)
     },
     removeTimer() {
         let minutes = state.minutes
-        if ((minutes -= 5) < 0) {
-            state.minutes = 0
-            state.seconds = 0
-            timer.updateDisplay(state.minutes, state.seconds)
+        let seconds = state.seconds
+
+        if ((minutes - 5) < 0) {
+            minutes = 0
+            seconds = 0
+            timer.updateDisplay(minutes, seconds)
             return
         }
 
-        state.minutes -= 5
-        timer.updateDisplay(state.minutes, state.seconds)
+        minutes -= 5
+        timer.updateDisplay(minutes, seconds)
     },
 }

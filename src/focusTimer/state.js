@@ -3,4 +3,8 @@ export const state = {
     countdownId: null,
     minutes: 25,
     seconds: 0,
+    default: {
+        minutes: 25,
+        seconds: 0
+    }
 }

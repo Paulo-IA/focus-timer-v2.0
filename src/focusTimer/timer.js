@@ -1,5 +1,5 @@
 import * as el from "./elements.js"
-import * as actions from './actions.js'
+import {actions} from './actions.js'
 import { state } from "./state.js"
 
 export function updateDisplay(minutes, seconds) {
@@ -10,7 +10,7 @@ export function updateDisplay(minutes, seconds) {
     state.minutes = minutes
 
     el.seconds.textContent = String(seconds).padStart(2, "0")
-    state.minutes = minutes
+    state.seconds = seconds
 }
 
 export function countdown() {
