@@ -7,5 +7,6 @@ export function start(minutes, seconds) {
     state.seconds = seconds
 
     events.registerControls()
+    events.registerCardSounds()
     timer.updateDisplay(minutes, seconds)
 }

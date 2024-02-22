@@ -1,6 +1,7 @@
 import * as el from "./elements.js"
 import {actions} from './actions.js'
 import { state } from "./state.js"
+import { kithcenTimer } from "./sounds.js"
 
 export function updateDisplay(minutes, seconds) {
     minutes = minutes ?? state.minutes
@@ -33,6 +34,7 @@ export function countdown() {
 
     if(minutes < 0) {
         actions.stopTimer()
+        kithcenTimer.play()
         return
     }
 

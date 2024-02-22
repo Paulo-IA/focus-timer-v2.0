@@ -1,3 +1,3 @@
 import * as FocusTimer from "./focusTimer/index.js"
 
-FocusTimer.start(25, 0);
+FocusTimer.start(0, 3);

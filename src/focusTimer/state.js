@@ -8,3 +8,7 @@ export const state = {
         seconds: 0
     }
 }
+
+export const cardState = {
+    selected: 'rain'
+}
