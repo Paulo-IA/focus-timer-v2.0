@@ -1,6 +1,5 @@
 import { controllers } from './elements.js'
 import {actions} from './actions.js'
-import { state } from './state.js'
 
 export function registerControls() {
     controllers.addEventListener('click', (event) => {
