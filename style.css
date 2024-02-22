@@ -1,0 +1,137 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+    --bg-page: #fff;
+    --bg-card-button: #e1e1e6;
+    --bg-card-button-hover: #d2d2d6;
+    --bg-card-button-selected: #02799d;
+    --bg-card-button-selected-hover: #046988;
+    
+    --text-card-button-selected-color: #fff;
+    --text-color: #323238;
+}
+
+body {
+    font-size: 1.6rem;
+
+    background-color: var(--bg-page);
+
+    font-family: 'Roboto', sans-serif;
+
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+/* timer */
+#timer-container {
+    display: grid;
+    justify-content: center;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+    font-size: 12.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* timer controllers */
+#controllers {
+    display: flex;
+    justify-content: space-between;
+}
+
+#controllers button {
+    background: transparent;
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+
+    font-size: 6.4rem;
+}
+
+/* cards */
+#cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+#cards button {
+    background-color: var(--bg-card-button);
+    border-radius: 2.4rem;
+    font-size: 5.6rem;
+
+    height: 15rem;
+    width: 14rem;
+
+    cursor: pointer;
+}
+
+#cards button.selected {
+    background-color: var(--bg-card-button-selected);
+    color: var(--text-card-button-selected-color);
+}
+
+#cards button:hover {
+    background-color: var(--bg-card-button-hover);
+}
+#cards button.selected:hover {
+    background-color: var(--bg-card-button-selected-hover);
+}
+
+
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+    #app {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    #app {
+        gap: 10rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    #app {
+        gap: 20rem;
+    }
+}

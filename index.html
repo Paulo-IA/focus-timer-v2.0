@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer 2.0</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-svg">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <section id="timer-container">
+            <section id="timer">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+
+            <section id="controllers">
+                <button
+                    data-action="toggleRunning"
+                    class="ph ph-play-circle"
+                >
+                    <span class="sr-only">Play Button</span>
+                </button>
+                
+                <button
+                    data-action="toggleRunning"
+                    class="ph ph-pause-circle"
+                >
+                    <span class="sr-only">Pause Button</span>
+                </button>
+                
+                <button
+                    data-action="stopTimer"
+                    class="ph ph-stop-circle"
+                >
+                    <span class="sr-only">Stop Button</span>
+                </button>
+                
+                <button
+                    data-action="addTimer"
+                    class="ph ph-plus-circle"
+                >
+                    <span class="sr-only">Add 5 minutes Button</span>
+                </button>
+                
+                <button
+                    data-action="removeTimer"
+                    class="ph ph-minus-circle"
+                >
+                    <span class="sr-only">Remove 5 minutes Button</span>
+                </button>
+            </section>
+        </section>
+
+        <section id="cards">
+            <button
+                    class="ph ph-tree-evergreen"
+                >
+                <span class="sr-only">Forest sound</span>
+            </button>
+
+            <button
+                    class="ph ph-cloud-rain selected"
+                >
+                <span class="sr-only">Rain sound</span>
+            </button>
+
+            <button
+                    class="ph ph-storefront"
+                >
+                <span class="sr-only">Coffe shop sound</span>
+            </button>
+
+            <button
+                    class="ph ph-flame"
+                >
+                <span class="sr-only">Fireplace sound</span>
+            </button>
+        </section>
+    </div>
+</body>
+</html>
