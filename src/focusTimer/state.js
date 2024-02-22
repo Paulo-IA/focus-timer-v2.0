@@ -1,5 +1,6 @@
 export const state = {
     isRunning: false,
-    minutes: null,
-    seconds: null,
+    countdownId: null,
+    minutes: 25,
+    seconds: 0,
 }

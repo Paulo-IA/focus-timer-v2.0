@@ -1,4 +1,5 @@
 import * as el from "./elements.js"
+import * as actions from './actions.js'
 import { state } from "./state.js"
 
 export function updateDisplay(minutes, seconds) {
@@ -12,3 +13,30 @@ export function updateDisplay(minutes, seconds) {
     state.minutes = minutes
 }
 
+export function countdown() {
+
+    clearTimeout(state.countdownId)
+
+    if(!state.isRunning) {
+        return
+    }
+
+    let minutes = Number(el.minutes.textContent)
+    let seconds = Number(el.seconds.textContent)
+
+    seconds--
+
+    if(seconds < 0) {
+        seconds = 59
+        minutes--
+    }
+
+    if(minutes < 0) {
+        actions.stopTimer()
+        return
+    }
+
+    updateDisplay(minutes, seconds)
+
+    state.countdownId = setTimeout(() => countdown(), 1000)
+}

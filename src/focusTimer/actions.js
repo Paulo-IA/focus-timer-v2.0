@@ -6,8 +6,10 @@ export const actions = {
     toggleRunning() {
         document.documentElement.classList.toggle('running')
         el.stopButton.classList.toggle('disabled')
-        
         state.isRunning = !state.isRunning
+
+        timer.countdown()
+        
     },
     stopTimer() {
         document.documentElement.classList.remove('running')
